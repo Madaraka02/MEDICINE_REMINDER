@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -116,11 +117,10 @@ USE_TZ = True
 
 
 
-JWT_SECRET_KEY = EFRTYUIOPJLKB,NGFHGJFMNCVLIUHJBGMNFLHKBERFHLGBRDFIO
-
-REST_FRAMEWORK={
-    'DEFAULT_AUTHENTICATION_CLASSES':(
-        'authentication.backends.JwtAuthentication',
+JWT_SECRET_KEY = JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'authentication.backends.JWTAuthentication',
     )
 }
 # Static files (CSS, JavaScript, Images)
