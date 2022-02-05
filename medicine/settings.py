@@ -117,8 +117,7 @@ USE_TZ = True
 
 
 
-JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
-
+JWT_SECRET_KEY = JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'authentication.backends.JWTAuthentication',
