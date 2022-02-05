@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'authentication',
+    'prescriptions',
 ]
 
 MIDDLEWARE = [
@@ -112,6 +115,14 @@ USE_I18N = True
 USE_TZ = True
 
 
+
+JWT_SECRET_KEY = EFRTYUIOPJLKB,NGFHGJFMNCVLIUHJBGMNFLHKBERFHLGBRDFIO
+
+REST_FRAMEWORK={
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'authentication.backends.JwtAuthentication',
+    )
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
